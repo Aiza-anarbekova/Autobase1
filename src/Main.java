@@ -1,19 +1,15 @@
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import Json.BusJson;
+import Json.DriverJson;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
-    public static final GsonBuilder BUILDER = new GsonBuilder();
-    public static final Gson GSON = BUILDER.setPrettyPrinting().create();
-    public static final Path WHITE_PATH = Paths.get("./json-bus");
-    public static final Path WHITE_PATH2 = Paths.get("./json-driver");
+import static Json.BusJson.GSON;
+
+public class Main{
+
+
+
 
 
     public static void main(String[] args) {
@@ -29,9 +25,8 @@ public class Main {
 
         String json = GSON.toJson(busList);
         String jsonDrover = GSON.toJson(drivers);
-        write(json);
-        writeDriver(jsonDrover);
-
+       BusJson. write(json);
+        DriverJson.writeDriver(jsonDrover);
 
         System.out.println("-----------*BUS*---------------");
         System.out.println("#| BUS    | Driver   | State ");
@@ -39,6 +34,7 @@ public class Main {
         for (Bus b : busList) {
             System.out.println(b);
         }
+
         System.out.println();
         System.out.println("-----------*Drivers*----------");
         System.out.println("#|        | Driver  |  Bus ");
@@ -46,25 +42,11 @@ public class Main {
         for (Driver a : drivers) {
             System.out.println(a);
         }
-    }
-    private static void write(String obj) {
-
-        Path write = Paths.get(String.valueOf(WHITE_PATH));
-        try {
-            Files.writeString(write, obj, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
-        } catch (IOException e) {
-            System.out.printf(e.getMessage());
-        }
+        System.out.println();
     }
 
-    private static void writeDriver(String obj) {
-        Path write = Paths.get(String.valueOf(WHITE_PATH2));
-        try {
-            Files.writeString(write, obj, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-    }
+
+
 
 
 }
