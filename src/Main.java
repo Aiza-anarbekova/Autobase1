@@ -9,6 +9,10 @@ import static Json.BusJson.GSON;
 
 public class Main{
 
+
+
+
+
     public static void main(String[] args) {
 
         List<Bus> busList = new ArrayList<>(List.of(
@@ -33,7 +37,7 @@ public class Main{
             System.out.println(b);
         }
 
-
+        System.out.println();
         System.out.println("-----------*Drivers*----------");
         System.out.println("#|        | Driver  |  Bus ");
         System.out.println("----------+--------+-------");
@@ -61,7 +65,6 @@ public class Main{
                     int c= scanner.nextInt();
                     if (c==1){
 
-
                         }
                     }
 
@@ -75,11 +78,4 @@ public class Main{
             }
         }
 
-    }
-
-
-
-
-
-
-
+}
