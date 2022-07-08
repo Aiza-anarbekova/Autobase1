@@ -1,10 +1,20 @@
 public class Driver {
     private int id;
     private String name;
+    private String bus;
 
-    public Driver(int id, String name) {
+    public Driver(int id, String name, String bus) {
         this.id = id;
         this.name = name;
+        this.bus = bus;
+    }
+
+    public String getBus() {
+        return bus;
+    }
+
+    public void setBus(String bus) {
+        this.bus = bus;
     }
 
     public int getId() {
