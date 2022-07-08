@@ -1,17 +1,27 @@
 public class Driver {
-    private String id;
+    private int  id;
     private String name;
+    private String bus;
 
-    public Driver(String id, String name) {
+    public Driver(int id, String name, String bus) {
         this.id = id;
         this.name = name;
+        this.bus = bus;
     }
 
-    public String getId() {
+    public String getBus() {
+        return bus;
+    }
+
+    public void setBus(String bus) {
+        this.bus = bus;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
