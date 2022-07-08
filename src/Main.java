@@ -10,6 +10,7 @@ import static Json.BusJson.GSON;
 public class Main{
 
     public static void main(String[] args) {
+
         List<Bus> busList = new ArrayList<>(List.of(
                 new Bus(1, "Camry", "", State.BASE),
                 new Bus(2, "Lexus", "", State.BASE),
