@@ -21,6 +21,7 @@ public class BusJson {
             Files.writeString(write, obj, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
         } catch (IOException e) {
             System.out.printf(e.getMessage());
+
         }
     }
 }
